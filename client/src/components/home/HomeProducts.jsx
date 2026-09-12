@@ -9,10 +9,11 @@ const products = productsData.map(p => ({
   description: p.shortDescription,
   image: p.images[0],
   link: `/products/${p.slug}`,
+  slug: p.slug,
   externalLink: p.externalLink,
 }));
 
-const HomeProducts = () => {
+const HomeProducts = ({ locationData }) => {
   return (
     <section className="py-16 lg:py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,7 +24,7 @@ const HomeProducts = () => {
               Our Products
             </h4>
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
-              Premium Teflon Dams & Solventless Lamination Accessories
+              Premium Teflon Dams & Solventless Lamination Accessories {locationData ? `in ${locationData.name}` : ''}
             </h2>
             <p className="mt-4 text-lg text-gray-900 max-w-2xl">
               Explore our extensive range of high-quality, machine-specific Teflon Dams. Engineered for perfect fit and continuous reliable performance, our products cater to industry-leading solventless lamination machines including Nord, Bobst, Uteco, and Comexi.
@@ -77,7 +78,7 @@ const HomeProducts = () => {
                 {product.description}
               </p>
               <Link
-                to={product.link}
+                to={locationData ? `/${locationData.slug}/${product.slug}` : product.link}
                 className="inline-flex items-center text-blue-600 font-semibold text-sm hover:text-blue-800 transition-colors mt-auto"
               >
                 View Details

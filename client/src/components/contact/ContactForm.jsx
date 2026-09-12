@@ -1,15 +1,12 @@
 import React, { useState, useRef } from "react";
-import { submitContact } from "../../services/api";
+import { useSubmitContact } from "../../services/api";
 
 const ContactForm = () => {
-  const [status, setStatus] = useState("idle"); // idle | loading | success | error
-  const [errorMsg, setErrorMsg] = useState("");
+  const mutation = useSubmitContact();
   const formRef = useRef(null);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus("loading");
-    setErrorMsg("");
 
     const formData = new FormData(e.target);
     const payload = {
@@ -22,14 +19,11 @@ const ContactForm = () => {
       message: formData.get("message"),
     };
 
-    try {
-      await submitContact(payload);
-      setStatus("success");
-      formRef.current?.reset();
-    } catch (err) {
-      setErrorMsg(err.message);
-      setStatus("error");
-    }
+    mutation.mutate(payload, {
+      onSuccess: () => {
+        formRef.current?.reset();
+      },
+    });
   };
 
   return (
@@ -43,7 +37,7 @@ const ContactForm = () => {
       </p>
 
       {/* Success Banner */}
-      {status === "success" && (
+      {mutation.isSuccess && (
         <div className="mb-6 flex items-start gap-3 bg-green-50 border border-green-200 rounded-xl p-4">
           <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center shrink-0">
             <svg
@@ -72,7 +66,7 @@ const ContactForm = () => {
       )}
 
       {/* Error Banner */}
-      {status === "error" && (
+      {mutation.isError && (
         <div className="mb-6 flex items-start gap-3 bg-red-50 border border-red-200 rounded-xl p-4">
           <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center shrink-0">
             <svg
@@ -91,7 +85,7 @@ const ContactForm = () => {
           </div>
           <div>
             <p className="text-red-800 font-bold text-sm">Submission Failed</p>
-            <p className="text-red-700 text-xs mt-0.5">{errorMsg}</p>
+            <p className="text-red-700 text-xs mt-0.5">{mutation.error?.message || "An error occurred."}</p>
           </div>
         </div>
       )}
@@ -229,10 +223,10 @@ const ContactForm = () => {
         <div className="pt-4 flex flex-col items-center">
           <button
             type="submit"
-            disabled={status === "loading"}
+            disabled={mutation.isPending}
             className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed text-white px-8 py-3.5 rounded-full font-bold transition-all shadow-md hover:shadow-lg flex items-center justify-center group"
           >
-            {status === "loading" ? (
+            {mutation.isPending ? (
               <>
                 <svg
                   className="w-5 h-5 mr-2 animate-spin"

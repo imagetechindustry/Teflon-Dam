@@ -1,151 +1,197 @@
-const BASE_URL = import.meta.env.VITE_API_URL;
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 
-/**
- * Submit a "Get a Quote" form request
- * @param {Object} payload - Form data
- * @returns {Promise<{ success: boolean, message: string }>}
- */
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+
+/* ── 1. CORE HTTP FETCH FUNCTIONS ── */
+
+export const fetchLocation = async (slug) => {
+  const res = await fetch(`${BASE_URL}/locations/${slug}`);
+  if (!res.ok) {
+    const error = new Error(`Location ${slug} not found`);
+    error.status = res.status;
+    throw error;
+  }
+  return res.json();
+};
+
+export const fetchLocations = async () => {
+  const res = await fetch(`${BASE_URL}/locations`);
+  if (!res.ok) throw new Error("Failed to fetch locations");
+  return res.json();
+};
+
 export const submitQuote = async (payload) => {
+  const currentHost = typeof window !== 'undefined' ? window.location.hostname.replace(/^www\./, '') : 'teflondam.com';
+  const finalPayload = { sourceWebsite: currentHost, ...payload };
+
   const res = await fetch(`${BASE_URL}/forms/quote`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
+    body: JSON.stringify(finalPayload),
   });
 
   const data = await res.json();
-
-  if (!res.ok) {
-    const message =
-      data.errors?.[0]?.msg ||
-      data.message ||
-      "Something went wrong. Please try again.";
-    throw new Error(message);
-  }
-
+  if (!res.ok) throw new Error(data.errors?.[0]?.msg || data.message || "Failed to submit quote.");
   return data;
 };
 
-/**
- * Submit a "Contact Us" form request
- * @param {Object} payload - Form data
- * @returns {Promise<{ success: boolean, message: string }>}
- */
 export const submitContact = async (payload) => {
+  const currentHost = typeof window !== 'undefined' ? window.location.hostname.replace(/^www\./, '') : 'teflondam.com';
+  const finalPayload = { sourceWebsite: currentHost, ...payload };
+
   const res = await fetch(`${BASE_URL}/forms/contact`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
+    body: JSON.stringify(finalPayload),
   });
 
   const data = await res.json();
-
-  if (!res.ok) {
-    const message =
-      data.errors?.[0]?.msg ||
-      data.message ||
-      "Something went wrong. Please try again.";
-    throw new Error(message);
-  }
-
+  if (!res.ok) throw new Error(data.errors?.[0]?.msg || data.message || "Failed to submit message.");
   return data;
 };
 
-/**
- * Admin: Login
- * @param {string} username
- * @param {string} password
- * @returns {Promise<{ token: string, username: string }>}
- */
+/* ── 2. QUERY KEYS ── */
+
+export const QUERY_KEYS = {
+  locations: ["locations"],
+  location: (slug) => ["location", slug],
+  adminStats: ["admin", "stats"],
+  adminSubmissions: (params) => ["admin", "submissions", params],
+  adminLocations: ["admin", "locations"],
+};
+
+/* ── 3. TANSTACK CUSTOM HOOKS ── */
+
+/** Hook: Fetch all active locations with auto-seeding of individual city caches */
+export const useLocations = (options = {}) => {
+  const queryClient = useQueryClient();
+  return useQuery({
+    queryKey: QUERY_KEYS.locations,
+    queryFn: async () => {
+      const data = await fetchLocations();
+      if (Array.isArray(data)) {
+        // Automatically seed individual city caches for 0ms transitions
+        data.forEach((loc) => {
+          if (loc && loc.slug) {
+            queryClient.setQueryData(QUERY_KEYS.location(loc.slug), loc);
+          }
+        });
+      }
+      return data;
+    },
+    staleTime: 1000 * 60 * 30,
+    ...options,
+  });
+};
+
+/** Hook: Fetch single location with instant initialData derivation */
+export const useLocation = (slug, options = {}) => {
+  const queryClient = useQueryClient();
+  return useQuery({
+    queryKey: QUERY_KEYS.location(slug),
+    queryFn: () => fetchLocation(slug),
+    initialData: () => {
+      if (!slug) return undefined;
+      const cachedDirect = queryClient.getQueryData(QUERY_KEYS.location(slug));
+      if (cachedDirect) return cachedDirect;
+
+      const allLocations = queryClient.getQueryData(QUERY_KEYS.locations);
+      if (Array.isArray(allLocations)) {
+        return allLocations.find((loc) => loc.slug === slug);
+      }
+      return undefined;
+    },
+    initialDataUpdatedAt: () => {
+      return (
+        queryClient.getQueryState(QUERY_KEYS.location(slug))?.dataUpdatedAt ||
+        queryClient.getQueryState(QUERY_KEYS.locations)?.dataUpdatedAt
+      );
+    },
+    staleTime: 1000 * 60 * 30,
+    ...options,
+  });
+};
+
+/** Hook: Hover prefetch for individual city */
+export const usePrefetchLocation = () => {
+  const queryClient = useQueryClient();
+  return (slug) => {
+    if (!slug) return;
+    queryClient.prefetchQuery({
+      queryKey: QUERY_KEYS.location(slug),
+      queryFn: () => fetchLocation(slug),
+    });
+  };
+};
+
+/** Hook: Hover prefetch for all locations */
+export const usePrefetchLocations = () => {
+  const queryClient = useQueryClient();
+  return () => {
+    queryClient.prefetchQuery({
+      queryKey: QUERY_KEYS.locations,
+      queryFn: fetchLocations,
+    });
+  };
+};
+
+export const useSubmitQuote = (options = {}) => useMutation({ mutationFn: submitQuote, ...options });
+export const useSubmitContact = (options = {}) => useMutation({ mutationFn: submitContact, ...options });
+
+/* ── 4. ADMIN FUNCTIONS ── */
+
 export const adminLogin = async (username, password) => {
-  const res = await fetch(`${BASE_URL}/auth/login`, {
+  const res = await fetch(`${BASE_URL}/admin/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username, password }),
   });
-
   const data = await res.json();
-  if (!res.ok) throw new Error(data.message || "Login failed.");
+  if (!res.ok) throw new Error(data.message || "Login failed");
   return data;
 };
 
-/**
- * Admin: Verify token
- * @param {string} token
- * @returns {Promise<boolean>}
- */
 export const verifyToken = async (token) => {
-  try {
-    const res = await fetch(`${BASE_URL}/auth/verify`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-    const data = await res.json();
-    return data.valid === true;
-  } catch {
-    return false;
-  }
-};
-
-/**
- * Admin: Fetch submissions
- * @param {string} token
- * @param {{ type?: string, isRead?: boolean, page?: number, limit?: number }} params
- */
-export const fetchSubmissions = async (token, params = {}) => {
-  const query = new URLSearchParams();
-  if (params.type) query.set("type", params.type);
-  if (params.isRead !== undefined) query.set("isRead", params.isRead);
-  if (params.page) query.set("page", params.page);
-  if (params.limit) query.set("limit", params.limit);
-
-  const res = await fetch(`${BASE_URL}/admin/submissions?${query}`, {
+  const res = await fetch(`${BASE_URL}/admin/verify`, {
     headers: { Authorization: `Bearer ${token}` },
   });
-
-  if (!res.ok) throw new Error("Failed to fetch submissions.");
+  if (!res.ok) throw new Error("Invalid token");
   return res.json();
 };
 
-/**
- * Admin: Fetch dashboard stats
- * @param {string} token
- */
 export const fetchStats = async (token) => {
   const res = await fetch(`${BASE_URL}/admin/stats`, {
     headers: { Authorization: `Bearer ${token}` },
   });
-  if (!res.ok) throw new Error("Failed to fetch stats.");
+  if (!res.ok) throw new Error("Failed to fetch stats");
   return res.json();
 };
 
-/**
- * Admin: Mark submission as read/unread
- * @param {string} token
- * @param {string} id
- * @param {boolean} isRead
- */
-export const markSubmissionRead = async (token, id, isRead) => {
+export const fetchSubmissions = async (type, page = 1, limit = 10, token) => {
+  const res = await fetch(
+    `${BASE_URL}/admin/submissions?type=${type}&page=${page}&limit=${limit}`,
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
+  if (!res.ok) throw new Error("Failed to fetch submissions");
+  return res.json();
+};
+
+export const markSubmissionRead = async (id, token) => {
   const res = await fetch(`${BASE_URL}/admin/submissions/${id}/read`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-    body: JSON.stringify({ isRead }),
+    method: "PUT",
+    headers: { Authorization: `Bearer ${token}` },
   });
-  if (!res.ok) throw new Error("Failed to update submission.");
+  if (!res.ok) throw new Error("Failed to update status");
   return res.json();
 };
 
-/**
- * Admin: Delete a submission
- * @param {string} token
- * @param {string} id
- */
-export const deleteSubmission = async (token, id) => {
+export const deleteSubmission = async (id, token) => {
   const res = await fetch(`${BASE_URL}/admin/submissions/${id}`, {
     method: "DELETE",
     headers: { Authorization: `Bearer ${token}` },
   });
-  if (!res.ok) throw new Error("Failed to delete submission.");
+  if (!res.ok) throw new Error("Failed to delete submission");
   return res.json();
 };

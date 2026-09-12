@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const HomeAbout = () => {
+const HomeAbout = ({ locationData }) => {
   return (
     <section className="py-8 lg:py-12 pb-24 lg:pb-32 bg-gray-50 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,7 +76,7 @@ const HomeAbout = () => {
               About ImageTech Industries
             </h4>
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-6">
-              Leading Manufacturer & Supplier of Premium Teflon Dams in India
+              Leading Manufacturer & Supplier of Premium Teflon Dams {locationData ? `in ${locationData.name}` : 'in India'}
             </h2>
             <p className="text-lg text-gray-900 mb-8 leading-relaxed ">
               ImageTech Industries is India's premier manufacturer and supplier of high-quality <strong>Teflon Dams</strong> for solventless lamination machines. Operating from Delhi, we specialize in delivering machine-specific lamination accessories that guarantee absolute compatibility, eliminate operational downtime, and boost continuous production speeds. Whether you need a robust Teflon Dam for Nord Super Simplex, Super Combi, Bobst, Uteco, or Comexi, our precision-engineered solutions are trusted by top flexible packaging companies globally to maintain flawless lamination quality.

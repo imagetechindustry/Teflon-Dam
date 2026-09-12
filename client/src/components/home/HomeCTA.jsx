@@ -1,6 +1,6 @@
 import React from "react";
 
-const HomeCTA = () => {
+const HomeCTA = ({ locationData }) => {
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
       <section className="bg-slate-800 text-white relative overflow-hidden rounded-3xl shadow-2xl my-4">
@@ -14,7 +14,7 @@ const HomeCTA = () => {
               Let's Work Together
             </h4>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 leading-tight">
-              Need the Perfect Machine-Specific Teflon Dam for Your Lamination Setup?
+              Ready to Upgrade Your Lamination Process {locationData ? `in ${locationData.name}` : ''}?
             </h2>
             <p className="text-white font-bold text-lg max-w-3xl">
               Connect with our technical experts for precise product recommendations, custom lamination machine solutions, or a quick quote.

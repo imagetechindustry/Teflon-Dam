@@ -27,7 +27,7 @@ const industries = [
   },
 ];
 
-const HomeIndustries = () => {
+const HomeIndustries = ({ locationData }) => {
   return (
     <section className="py-16 lg:py-24 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,7 +38,7 @@ const HomeIndustries = () => {
               Industries We Serve
             </h4>
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-6">
-              Empowering Lamination & Converting Industries with Precision Teflon Dams
+              Empowering Lamination & Converting Industries with Precision Teflon Dams {locationData ? `in ${locationData.name}` : ''}
             </h2>
             <p className="text-lg text-gray-900 mb-10">
               Our machine-specific Teflon Dams are heavily utilized across solventless lamination and converting applications. By providing an exact fit for machines like Nord, Bobst, Uteco, and Comexi, we ensure optimal, continuous operation for the flexible packaging sector.

@@ -1,6 +1,6 @@
 import React from "react";
 
-const HomeHero = () => {
+const HomeHero = ({ locationData }) => {
   return (
     <div className="relative bg-gradient-to-r from-blue-50 to-white overflow-hidden pt-8 pb-16 md:pt-12 md:pb-24">
       {/* Background decoration */}
@@ -22,7 +22,7 @@ const HomeHero = () => {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-tight">
               Premium <span className="text-blue-600">Teflon Dam</span> <br />
               <span className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-gray-900 font-bold">
-                For All Lamination Machines
+                {locationData ? `For All Lamination Machines in ${locationData.name}` : "For All Lamination Machines"}
               </span>
             </h1>
 

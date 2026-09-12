@@ -23,7 +23,7 @@ const reasons = [
   },
 ];
 
-const HomeWhyChoose = () => {
+const HomeWhyChoose = ({ locationData }) => {
   return (
     <section className="py-16 lg:py-24 bg-gray-50 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,7 +32,7 @@ const HomeWhyChoose = () => {
             Why Choose ImageTech Industries
           </h4>
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
-            Why Choose Our High-Performance Teflon Dams for Lamination Machines
+            Why Partner with ImageTech Industries {locationData ? `in ${locationData.name}` : ''}?
           </h2>
         </div>
 

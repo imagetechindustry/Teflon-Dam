@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const HomeCertifications = () => {
+const HomeCertifications = ({ locationData }) => {
   return (
     <section className="relative bg-white overflow-hidden">
       {/* Background Split */}
@@ -15,7 +15,7 @@ const HomeCertifications = () => {
               Quality & Certifications
             </h4>
             <h2 className="text-3xl font-extrabold leading-tight mb-6">
-              Global Standards in Teflon Dam Manufacturing
+              Certified Quality & Reliability {locationData ? `for ${locationData.name}` : ''}
             </h2>
             <p className="text-white font-bold mb-8 leading-relaxed text-sm">
               Our high-performance Teflon Dams are manufactured and meticulously inspected to meet strict international quality standards, ensuring consistent performance and extreme durability in demanding lamination applications.

@@ -16,7 +16,7 @@ const faqData = [
 
 import { SchemaInjector } from "../common/SEO";
 
-const HomeFAQ = () => {
+const HomeFAQ = ({ locationData }) => {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -34,7 +34,7 @@ const HomeFAQ = () => {
     <>
       <SchemaInjector schema={faqSchema} />
       <FAQSection
-        title="Everything You Need To Know About Teflon Dams"
+        title={`Everything You Need To Know About Teflon Dams ${locationData ? `in ${locationData.name}` : ''}`}
         subtitle="Frequently Asked Questions"
         description="Find answers to the most common questions about our premium Teflon Dams for various solventless lamination machines."
         faqs={faqData}
