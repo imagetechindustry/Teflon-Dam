@@ -21,7 +21,7 @@ const Certifications = () => {
 
   return (
     <>
-      <SEO 
+      <SEO
         title="ISO 9001:2015 Certifications | ImageTech Industries"
         description="ImageTech Industries is an ISO 9001:2015 certified supplier of high-quality Teflon Dams. View our certifications and commitment to global standards."
         keywords={['ISO 9001 certified manufacturer', 'Teflon Dam quality standard', 'imagetech industries certification', 'Teflon Dam manufacturing standards']}

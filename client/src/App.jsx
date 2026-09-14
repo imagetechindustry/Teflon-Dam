@@ -27,6 +27,7 @@ import AdminProtectedRoute from "./components/admin/AdminProtectedRoute";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import { AdminQuotes, AdminContacts } from "./pages/admin/AdminSubmissions";
+import AdminLocations from "./pages/admin/AdminLocations";
 
 // Layout wrapper for public pages (includes Navbar + Footer)
 const PublicLayout = ({ children }) => (
@@ -155,6 +156,14 @@ function App() {
             element={
               <AdminProtectedRoute>
                 <AdminDashboard />
+              </AdminProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/locations"
+            element={
+              <AdminProtectedRoute>
+                <AdminLocations />
               </AdminProtectedRoute>
             }
           />
