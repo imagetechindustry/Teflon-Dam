@@ -120,7 +120,7 @@ export const adminDeleteLocation = async (token, id) => {
  * @returns {Promise<{ success: boolean, message: string }>}
  */
 export const submitQuote = async (payload) => {
-  const currentHost = typeof window !== 'undefined' ? window.location.hostname.replace(/^www\./, '') : 'teflondam.com';
+  const currentHost = typeof window !== 'undefined' ? window.location.hostname : 'www.teflondam.com';
   const finalPayload = { sourceWebsite: currentHost, ...payload };
 
   const res = await fetch(`${BASE_URL}/forms/quote`, {
@@ -148,7 +148,7 @@ export const submitQuote = async (payload) => {
  * @returns {Promise<{ success: boolean, message: string }>}
  */
 export const submitContact = async (payload) => {
-  const currentHost = typeof window !== 'undefined' ? window.location.hostname.replace(/^www\./, '') : 'teflondam.com';
+  const currentHost = typeof window !== 'undefined' ? window.location.hostname : 'www.teflondam.com';
   const finalPayload = { sourceWebsite: currentHost, ...payload };
 
   const res = await fetch(`${BASE_URL}/forms/contact`, {

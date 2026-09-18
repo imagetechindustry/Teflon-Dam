@@ -228,7 +228,7 @@ const AdminDashboard = () => {
                     >
                       <td className="px-6 py-3.5">
                         <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-100 font-mono">
-                          {s.sourceWebsite || "teflondam.com"}
+                          {s.sourceWebsite || "www.teflondam.com"}
                         </span>
                       </td>
                       <td className="px-6 py-3.5 font-semibold text-slate-900">

@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => {
         '/sitemap.xml': {
           target: targetUrl,
           changeOrigin: true,
-          rewrite: (path) => path + '?domain=teflondam.com',
+          rewrite: (path) => path + '?domain=www.teflondam.com',
         },
       },
     },

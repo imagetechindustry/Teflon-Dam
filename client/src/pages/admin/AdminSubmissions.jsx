@@ -11,7 +11,7 @@ const ALL_WEBSITES = [
   "doctorblade.co.in",
   "stroboscopelight.com",
   "barcoater.com",
-  "teflondam.com",
+  "www.teflondam.com",
   "inkmixingroller.com",
 ];
 
@@ -175,7 +175,7 @@ const SubmissionsTable = ({ type, title, subtitle }) => {
                     >
                       <td className="px-6 py-4">
                         <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-100 font-mono">
-                          🌐 {s.sourceWebsite || "teflondam.com"}
+                          🌐 {s.sourceWebsite || "www.teflondam.com"}
                         </span>
                       </td>
                       <td className="px-6 py-4">
@@ -277,7 +277,7 @@ const SubmissionsTable = ({ type, title, subtitle }) => {
                 <div key={s._id} className={`p-5 ${!s.isRead ? "bg-blue-50/30" : ""}`}>
                   <div className="flex items-start justify-between mb-3">
                     <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-100 font-mono">
-                      🌐 {s.sourceWebsite || "teflondam.com"}
+                      🌐 {s.sourceWebsite || "www.teflondam.com"}
                     </span>
                     <div className="text-right">
                       <p className="text-xs text-slate-500 font-bold">

@@ -14,8 +14,8 @@ const Home = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "ImageTech Industries",
-    "url": "https://teflondam.com/",
-    "logo": "https://teflondam.com/logo.png",
+    "url": "https://www.teflondam.com/",
+    "logo": "https://www.teflondam.com/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+91-8448336036",
@@ -34,7 +34,7 @@ const Home = () => {
     "@context": "https://schema.org/",
     "@type": "Product",
     "name": "Teflon Dam for Nord Super Simplex & Super Combi",
-    "image": "https://teflondam.com/TEFLON%20DAM/TEFLON%20DAM%20NORD%20SUPER%20SIMPLEX%20AND%20SUPER%20COMBI/TEFLON%20DAM%20NORD%20SUPER%20SIMPLEX%2C%20S.%20COMBI.png",
+    "image": "https://www.teflondam.com/TEFLON%20DAM/TEFLON%20DAM%20NORD%20SUPER%20SIMPLEX%20AND%20SUPER%20COMBI/TEFLON%20DAM%20NORD%20SUPER%20SIMPLEX%2C%20S.%20COMBI.png",
     "description": "Premium machine-specific Teflon Dam designed for Nord Super Simplex and Super Combi solventless lamination machines.",
     "brand": {
       "@type": "Brand",

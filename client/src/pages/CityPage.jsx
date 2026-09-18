@@ -128,8 +128,8 @@ const CityPage = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "ImageTech Industries",
-    "url": "https://teflondam.com/",
-    "logo": "https://teflondam.com/logo.png",
+    "url": "https://www.teflondam.com/",
+    "logo": "https://www.teflondam.com/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+91-8448336036",
@@ -149,7 +149,7 @@ const CityPage = () => {
     "@context": "https://schema.org/",
     "@type": "Product",
     "name": "Teflon Dams",
-    "image": "https://teflondam.com/heroimage.webp",
+    "image": "https://www.teflondam.com/heroimage.webp",
     "description": `Premium Teflon Dams available in ${locName}, ${locState}. Designed for solventless lamination presses.`,
     "brand": {
       "@type": "Brand",

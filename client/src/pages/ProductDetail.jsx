@@ -23,8 +23,8 @@ const ProductDetail = () => {
     "@context": "https://schema.org/",
     "@type": "Product",
     name: product.name,
-    image: `https://teflondam.com${product.images[0]}`,
-    description: product.shortDescription,
+    image: `https://www.teflondam.com${product.images[0]}`,
+    description: product.description,
     brand: {
       "@type": "Brand",
       name: "ImageTech Industries",

@@ -207,8 +207,8 @@ export default function QuoteModal() {
       message: formData.message.trim(),
       sourceWebsite:
         typeof window !== "undefined"
-          ? window.location.hostname.replace(/^www\./, "")
-          : "teflondam.com",
+          ? window.location.hostname
+          : "www.teflondam.com",
     };
 
     try {
