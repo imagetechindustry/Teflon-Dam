@@ -16,18 +16,25 @@ const Home = () => {
     "name": "ImageTech Industries",
     "url": "https://www.teflondam.com/",
     "logo": "https://www.teflondam.com/logo.png",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91-8448336036",
-      "contactType": "customer service",
-      "areaServed": "IN",
-      "availableLanguage": "en"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Delhi",
-      "addressCountry": "IN"
-    }
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91 8448336036",
+        "contactType": "sales",
+        "email": "imagetechindustries@gmail.com",
+        "areaServed": "IN",
+        "availableLanguage": "en"
+      }
+    ],
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "RZ-I-13, 2nd Floor, Nanda Block, Mahavir Enclave",
+        "addressLocality": "Delhi",
+        "postalCode": "110045",
+        "addressCountry": "IN"
+      }
+    ]
   };
 
   const productSchema = {
@@ -50,9 +57,9 @@ const Home = () => {
   return (
     <>
       <SEO 
-        title="Teflon Dam for Nord Super Simplex & Super Combi | ImageTech Industries"
-        description="Looking for a high-quality Teflon Dam for Nord Super Simplex and Super Combi? ImageTech Industries supplies machine-specific solventless lamination accessories."
-        keywords={['teflon dam', 'teflon dam for nord super simplex', 'teflon dam for nord super combi', 'solventless lamination machine accessory', 'imagetech industries']}
+        title="Premium Teflon Dams for Solventless Lamination Machines"
+        description="ImageTech Industries is India's leading manufacturer of high-quality, machine-specific Teflon Dams for solventless lamination machines like Nord, Bobst, Uteco, and Comexi."
+        keywords={['Teflon Dam', 'Solventless Lamination Machine Accessory', 'Teflon Dam for Nord', 'Teflon Dam for Bobst', 'Teflon Dam for Uteco', 'Teflon Dam for Comexi', 'ImageTech Industries']}
         schema={[orgSchema, productSchema]}
       />
       <main className="flex flex-col">
