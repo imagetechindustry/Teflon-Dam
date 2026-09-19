@@ -68,6 +68,125 @@ const Sitemap = () => {
           </p>
         </div>
 
+        {/* Technical Guides & Engineering Directory */}
+        <div className="mb-14 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-slate-100">
+            <div>
+              <span className="text-[10px] font-black uppercase tracking-widest text-blue-600 block">
+                Engineering Authority
+              </span>
+              <h2 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+                Technical Guides & Pressroom Resources
+              </h2>
+            </div>
+            <span className="text-xs font-bold text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200 shrink-0">
+              4 Authoritative Guides
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link
+              to="/selection-guide"
+              className="group p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-blue-50/40 transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-xs">
+                    01
+                  </span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800">
+                    Calculator
+                  </span>
+                </div>
+                <h3 className="font-extrabold text-sm text-slate-900 group-hover:text-blue-600 transition-colors mb-1">
+                  Selection & Sizing Guide
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Interactive sizing calculator, PTFE material grade matrix, and 3-step roll measurement.
+                </p>
+              </div>
+              <span className="text-xs font-bold text-blue-600 mt-3 inline-flex items-center">
+                Open Guide →
+              </span>
+            </Link>
+
+            <Link
+              to="/troubleshooting-guide"
+              className="group p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-blue-50/40 transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="w-8 h-8 rounded-xl bg-amber-600 text-white flex items-center justify-center font-bold text-xs">
+                    02
+                  </span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800">
+                    Quick-Finder
+                  </span>
+                </div>
+                <h3 className="font-extrabold text-sm text-slate-900 group-hover:text-blue-600 transition-colors mb-1">
+                  Defect Troubleshooting
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Visual quick-finder for adhesive edge oozing, friction overheating, and roller scoring.
+                </p>
+              </div>
+              <span className="text-xs font-bold text-blue-600 mt-3 inline-flex items-center">
+                Open Guide →
+              </span>
+            </Link>
+
+            <Link
+              to="/working-principle"
+              className="group p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-blue-50/40 transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="w-8 h-8 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold text-xs">
+                    03
+                  </span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-800">
+                    Physics
+                  </span>
+                </div>
+                <h3 className="font-extrabold text-sm text-slate-900 group-hover:text-blue-600 transition-colors mb-1">
+                  Working Principle & Physics
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Hydrodynamic fluid barrier mechanics, meniscus surface tension, and cylinder protection.
+                </p>
+              </div>
+              <span className="text-xs font-bold text-blue-600 mt-3 inline-flex items-center">
+                Open Guide →
+              </span>
+            </Link>
+
+            <Link
+              to="/press-applications"
+              className="group p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-blue-50/40 transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="w-8 h-8 rounded-xl bg-purple-600 text-white flex items-center justify-center font-bold text-xs">
+                    04
+                  </span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-100 text-purple-800">
+                    6 Sectors
+                  </span>
+                </div>
+                <h3 className="font-extrabold text-sm text-slate-900 group-hover:text-blue-600 transition-colors mb-1">
+                  Industrial Applications
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Packaging sector breakdowns, film substrate behaviors (BOPP, PET, Foil), and machine OEM fit.
+                </p>
+              </div>
+              <span className="text-xs font-bold text-blue-600 mt-3 inline-flex items-center">
+                Open Guide →
+              </span>
+            </Link>
+          </div>
+        </div>
+
         {isLoading ? (
           <SitemapSkeleton />
         ) : (

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { SchemaInjector } from "./SEO";
 
-const FAQSection = ({ title, subtitle, description, faqs }) => {
+const FAQSection = ({ title, subtitle, description, faqs = [], hideSchema = false }) => {
   const [openIndex, setOpenIndex] = useState(-1);
   const [showAll, setShowAll] = useState(false);
 
@@ -12,13 +13,13 @@ const FAQSection = ({ title, subtitle, description, faqs }) => {
 
   // SEO Schema Markup for FAQ
   const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
     mainEntity: faqs.map((faq) => ({
-    "@type": "Question",
+      "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
-      "@type": "Answer",
+        "@type": "Answer",
         text: faq.answer,
       },
     })),
@@ -26,11 +27,8 @@ const FAQSection = ({ title, subtitle, description, faqs }) => {
 
   return (
     <section className="py-16 lg:py-24 bg-white border-t border-gray-100">
-      {/* Inject SEO Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      {/* Inject SEO Schema via Helmet unless page already manages it */}
+      {!hideSchema && <SchemaInjector schema={faqSchema} />}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 max-w-3xl mx-auto">

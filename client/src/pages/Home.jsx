@@ -1,6 +1,9 @@
-import React from "react";
 import HomeHero from "../components/home/HomeHero";
 import HomeProducts from "../components/home/HomeProducts";
+import HomeTechnicalGuides from "../components/home/HomeTechnicalGuides";
+import HomeAnatomy from "../components/home/HomeAnatomy";
+import HomeMachineMatrix from "../components/home/HomeMachineMatrix";
+import HomeConvertingIntegration from "../components/home/HomeConvertingIntegration";
 import HomeIndustries from "../components/home/HomeIndustries";
 import HomeAbout from "../components/home/HomeAbout";
 import HomeCertifications from "../components/home/HomeCertifications";
@@ -56,7 +59,7 @@ const Home = () => {
 
   return (
     <>
-      <SEO 
+      <SEO
         title="Premium Teflon Dams for Solventless Lamination Machines"
         description="ImageTech Industries is India's leading manufacturer of high-quality, machine-specific Teflon Dams for solventless lamination machines like Nord, Bobst, Uteco, and Comexi."
         keywords={['Teflon Dam', 'Solventless Lamination Machine Accessory', 'Teflon Dam for Nord', 'Teflon Dam for Bobst', 'Teflon Dam for Uteco', 'Teflon Dam for Comexi', 'ImageTech Industries']}
@@ -65,10 +68,14 @@ const Home = () => {
       <main className="flex flex-col">
         <HomeHero />
         <HomeProducts />
-        <HomeIndustries />
         <HomeAbout />
         <HomeCertifications />
         <HomeWhyChoose />
+        <HomeTechnicalGuides />
+        <HomeAnatomy />
+        <HomeMachineMatrix />
+        <HomeConvertingIntegration />
+        <HomeIndustries />
         <HomeFAQ />
         <HomeCTA />
       </main>

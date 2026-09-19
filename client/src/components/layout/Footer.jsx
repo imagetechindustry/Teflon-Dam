@@ -177,11 +177,95 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/selection-guide"
+                  className="hover:text-blue-600 flex items-center transition-colors text-blue-700 font-bold"
+                >
+                  <svg
+                    className="w-3 h-3 text-blue-500 mr-2 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                  Selection & Sizing Guide
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/troubleshooting-guide"
+                  className="hover:text-blue-600 flex items-center transition-colors text-blue-700 font-bold"
+                >
+                  <svg
+                    className="w-3 h-3 text-blue-500 mr-2 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                  Troubleshooting Guide
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/working-principle"
+                  className="hover:text-blue-600 flex items-center transition-colors text-blue-700 font-bold"
+                >
+                  <svg
+                    className="w-3 h-3 text-blue-500 mr-2 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                  Working Principle & Physics
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/press-applications"
+                  className="hover:text-blue-600 flex items-center transition-colors text-blue-700 font-bold"
+                >
+                  <svg
+                    className="w-3 h-3 text-blue-500 mr-2 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                  Press Applications
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/contact"
                   className="hover:text-blue-600 flex items-center transition-colors"
                 >
                   <svg
-                    className="w-3 h-3 text-blue-500 mr-2"
+                    className="w-3 h-3 text-blue-500 mr-2 shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -202,7 +286,7 @@ const Footer = () => {
                   className="hover:text-blue-600 flex items-center transition-colors"
                 >
                   <svg
-                    className="w-3 h-3 text-blue-500 mr-2"
+                    className="w-3 h-3 text-blue-500 mr-2 shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

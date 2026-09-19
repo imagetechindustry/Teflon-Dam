@@ -19,6 +19,10 @@ import QuoteModal from "./components/common/QuoteModal";
 import Sitemap from "./pages/Sitemap";
 import CityPage from "./pages/CityPage";
 import CityProductPage from "./pages/CityProductPage";
+import SelectionGuide from "./pages/SelectionGuide";
+import TroubleshootingGuide from "./pages/TroubleshootingGuide";
+import WorkingPrinciple from "./pages/WorkingPrinciple";
+import PressApplications from "./pages/PressApplications";
 import { usePrefetchLocations } from "./services/api";
 
 // Admin
@@ -125,6 +129,39 @@ function App() {
             element={
               <PublicLayout>
                 <Sitemap />
+              </PublicLayout>
+            }
+          />
+          {/* ── Technical Guides (Must precede dynamic /:locationSlug) ── */}
+          <Route
+            path="/selection-guide"
+            element={
+              <PublicLayout>
+                <SelectionGuide />
+              </PublicLayout>
+            }
+          />
+          <Route
+            path="/troubleshooting-guide"
+            element={
+              <PublicLayout>
+                <TroubleshootingGuide />
+              </PublicLayout>
+            }
+          />
+          <Route
+            path="/working-principle"
+            element={
+              <PublicLayout>
+                <WorkingPrinciple />
+              </PublicLayout>
+            }
+          />
+          <Route
+            path="/press-applications"
+            element={
+              <PublicLayout>
+                <PressApplications />
               </PublicLayout>
             }
           />
