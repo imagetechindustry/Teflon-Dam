@@ -131,54 +131,11 @@ const Footer = () => {
                   About Us
                 </Link>
               </li>
-              <li>
-                <a
-                  href="https://www.imagetechindustries.com/products"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-blue-600 flex items-center transition-colors"
-                >
-                  <svg
-                    className="w-3 h-3 text-blue-500 mr-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                  Products
-                </a>
-              </li>
-              <li>
-                <Link
-                  to="/#blog"
-                  className="hover:text-blue-600 flex items-center transition-colors"
-                >
-                  <svg
-                    className="w-3 h-3 text-blue-500 mr-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                  Blogs
-                </Link>
-              </li>
+
               <li>
                 <Link
                   to="/selection-guide"
-                  className="hover:text-blue-600 flex items-center transition-colors text-blue-700 font-bold"
+                  className="hover:text-blue-600 flex items-center transition-colors  font-bold"
                 >
                   <svg
                     className="w-3 h-3 text-blue-500 mr-2 shrink-0"
@@ -193,13 +150,13 @@ const Footer = () => {
                       d="M9 5l7 7-7 7"
                     />
                   </svg>
-                  Selection & Sizing Guide
+                  Sizing Guide
                 </Link>
               </li>
               <li>
                 <Link
                   to="/troubleshooting-guide"
-                  className="hover:text-blue-600 flex items-center transition-colors text-blue-700 font-bold"
+                  className="hover:text-blue-600 flex items-center transition-colors  font-bold"
                 >
                   <svg
                     className="w-3 h-3 text-blue-500 mr-2 shrink-0"
@@ -220,7 +177,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/working-principle"
-                  className="hover:text-blue-600 flex items-center transition-colors text-blue-700 font-bold"
+                  className="hover:text-blue-600 flex items-center transition-colors  font-bold"
                 >
                   <svg
                     className="w-3 h-3 text-blue-500 mr-2 shrink-0"
@@ -235,7 +192,7 @@ const Footer = () => {
                       d="M9 5l7 7-7 7"
                     />
                   </svg>
-                  Working Principle & Physics
+                  Working Principle
                 </Link>
               </li>
               <li>

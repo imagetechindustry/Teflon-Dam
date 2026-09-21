@@ -69,13 +69,13 @@ const Home = () => {
         <HomeHero />
         <HomeProducts />
         <HomeAbout />
+        <HomeIndustries />
         <HomeCertifications />
         <HomeWhyChoose />
         <HomeTechnicalGuides />
         <HomeAnatomy />
         <HomeMachineMatrix />
         <HomeConvertingIntegration />
-        <HomeIndustries />
         <HomeFAQ />
         <HomeCTA />
       </main>
