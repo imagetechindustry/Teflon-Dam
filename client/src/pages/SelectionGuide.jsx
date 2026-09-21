@@ -160,16 +160,19 @@ export default function SelectionGuide() {
   return (
     <>
       <SEO
-        title="Teflon Dam Selection & Sizing Guide | Solventless Lamination"
-        description="Comprehensive Teflon Dam selection and sizing guide for solventless lamination machines. Includes interactive sizing calculator, PTFE grade tolerance matrix, and 3-step measurement guide."
+        title="Teflon Dam Selection & Sizing Guide | PTFE Dam Manufacturer"
+        description="Comprehensive Teflon Dam selection and sizing guide for solventless lamination machines. Sizing calculator, PTFE grade tolerance matrix, and 3-step measurement guide by ImageTech Industries."
         keywords={[
           "teflon dam selection guide",
-          "teflon dam sizing calculator",
-          "teflon dam for nord super simplex",
-          "teflon dam for bobst",
+          "teflon dam sizing guide",
+          "teflon dam manufacturer & exporter",
           "teflon dam dimensions",
-          "solventless lamination end seals",
-          "teflon side dam sizing",
+          "how to measure teflon dam",
+          "nord super simplex teflon dam sizing",
+          "bobst teflon dam size",
+          "uteco teflon dam measurements",
+          "ptfe dam tolerances",
+          "solventless lamination accessories",
           "imagetech industries",
         ]}
         schema={[articleSchema, howToSchema, faqSchema, breadcrumbSchema]}

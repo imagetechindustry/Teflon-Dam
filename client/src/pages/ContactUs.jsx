@@ -45,9 +45,9 @@ const ContactUs = () => {
   return (
     <>
       <SEO
-        title="Contact Us | ImageTech Industries"
-        description="Get in touch with ImageTech Industries. We are the leading supplier of Teflon Dams in Delhi, India. Contact us for sales, support, and custom inquiries."
-        keywords={['contact imagetech industries', 'teflon dam supplier contact', 'buy teflon dam in delhi', 'lamination machine accessories inquiries']}
+        title="Contact Teflon Dam Manufacturer & Exporter | ImageTech Industries"
+        description="Contact ImageTech Industries for custom Teflon Dam orders, machine CAD drawings, and factory pricing. Leading PTFE dam manufacturer & exporter in New Delhi, India."
+        keywords={['contact teflon dam manufacturer', 'teflon dam exporter in india', 'buy teflon dam factory price', 'ptfe dam supplier delhi', 'lamination machine accessories inquiries']}
         schema={contactSchema}
       />
       <div className="flex flex-col min-h-screen">

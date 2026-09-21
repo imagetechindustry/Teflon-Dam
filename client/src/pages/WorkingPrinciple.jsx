@@ -79,10 +79,12 @@ export default function WorkingPrinciple() {
   return (
     <>
       <SEO
-        title="Working Principle & Physics of Teflon Dams | Solventless Lamination"
-        description="Learn the physics and engineering working principle of Teflon Dams in solventless lamination: hydrodynamic fluid barriers, surface tension meniscus control, and zero-scoring friction mechanics."
+        title="Teflon Dam Working Principle & Fluid Physics | ImageTech Industries"
+        description="Learn the engineering working principle and fluid physics of Teflon Dams: hydrodynamic fluid barriers, surface tension meniscus control, zero-leak edge sealing, and roller protection."
         keywords={[
           "teflon dam working principle",
+          "teflon dam manufacturer & exporter",
+          "ptfe dam fluid physics",
           "solventless lamination coating head physics",
           "hydrodynamic teflon seal",
           "nip containment dam mechanism",

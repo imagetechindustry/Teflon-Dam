@@ -194,8 +194,8 @@ const CityProductPage = () => {
   return (
     <>
       <SEO
-        title={`${product.name} in ${location.name}, ${location.state} | ImageTech Industries`}
-        description={`Looking for ${product.name} in ${location.name}, ${location.state}? ImageTech Industries manufactures and supplies high-performance Teflon Dams with fast delivery.`}
+        title={`${product.name} in ${location.name} | Teflon Dam Manufacturer & Exporter - ImageTech Industries`}
+        description={`Buy ${product.name} in ${location.name}, ${location.state} directly from manufacturer & exporter ImageTech Industries. Precision PTFE Teflon dam with express dispatch and factory price.`}
         image={
           images[0]?.startsWith("http")
             ? images[0]
@@ -203,8 +203,9 @@ const CityProductPage = () => {
         }
         keywords={[
           `${product.name} in ${location.name}`,
-          `${product.name} supplier ${location.name}`,
-          `${product.name} manufacturer ${location.state}`,
+          `Teflon Dam Manufacturer in ${location.name}`,
+          `Teflon Dam Exporter ${location.name}`,
+          `PTFE Dam in ${location.name}`,
           `Teflon Dam ${location.name}`,
           `Teflon Dam supplier in ${location.name}`,
           `Solventless lamination ${location.state}`,

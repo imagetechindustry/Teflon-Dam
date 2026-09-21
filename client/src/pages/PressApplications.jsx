@@ -209,11 +209,12 @@ export default function PressApplications() {
         description="Explore how machine-specific Teflon Dams empower flexible food packaging, pharma blister foils, industrial sacks, and label converting machines. View substrate behaviors and machine matrix."
         keywords={[
           "teflon dam applications",
+          "teflon dam manufacturer & exporter",
           "solventless lamination food packaging",
           "teflon dam for pharmaceutical blister packaging",
           "nordmeccanica super simplex applications",
           "teflon dam converting sectors",
-          "bopp pet foil lamination dam",
+          "ptfe dam for barrier films",
           "imagetech industries",
         ]}
         schema={[articleSchema, faqSchema, breadcrumbSchema]}

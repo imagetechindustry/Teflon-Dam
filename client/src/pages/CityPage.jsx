@@ -150,7 +150,7 @@ const CityPage = () => {
     "@type": "Product",
     "name": "Teflon Dams",
     "image": "https://www.teflondam.com/heroimage.webp",
-    "description": `Premium Teflon Dams available in ${locName}, ${locState}. Designed for solventless lamination presses.`,
+    "description": `Precision CNC Teflon Dams available in ${locName}, ${locState}. Designed for solventless lamination presses.`,
     "brand": {
       "@type": "Brand",
       "name": "ImageTech Industries"
@@ -161,17 +161,18 @@ const CityPage = () => {
   return (
     <>
       <SEO
-        title={`Best Teflon Dam Manufacturer in ${locName}`}
-        description={`Looking for the best Teflon Dams in ${locName}, ${locState}? ImageTech Industries manufactures and supplies premium Teflon Dams for solventless lamination machines.`}
+        title={`Teflon Dam Manufacturer in ${locName} | PTFE Dam Exporter - ImageTech Industries`}
+        description={`ImageTech Industries is the premier Teflon Dam manufacturer & exporter in ${locName}, ${locState}. Precision PTFE dams, adhesive stoppers & side seals for solventless lamination machines.`}
         keywords={[
-          `Best Teflon Dam in ${locName}`,
+          `Teflon Dam in ${locName}`,
           `Teflon Dam Manufacturer in ${locName}`,
-          `Teflon Dams in ${locName}`,
+          `Teflon Dam Exporter in ${locName}`,
+          `PTFE Dam ${locName}`,
+          `Adhesive Teflon Dam ${locName}`,
+          `Teflon Dam Stopper ${locName}`,
           `Teflon Dam ${locState}`,
           'ImageTech Industries',
-          'Teflon Dam for Solventless Lamination',
-          'Solventless Lamination',
-          'Packaging Machinery'
+          'Teflon Dam for Solventless Lamination'
         ]}
         schema={[orgSchema, productSchema]}
       />

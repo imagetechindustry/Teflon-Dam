@@ -16,9 +16,20 @@ const Home = () => {
   const orgSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "ImageTech Industries",
+    "name": "ImageTech Industries - Teflon Dam Manufacturer & Exporter",
+    "alternateName": ["ImageTech Industries", "ImageTech Teflon Dam"],
     "url": "https://www.teflondam.com/",
     "logo": "https://www.teflondam.com/logo.png",
+    "description": "Leading manufacturer and exporter of precision PTFE Teflon dams, adhesive stoppers, and solventless lamination accessories in India.",
+    "knowsAbout": [
+      "Teflon Dam",
+      "Teflon Dam Manufacturer & Exporter",
+      "PTFE Dam",
+      "Adhesive Teflon Dam",
+      "Teflon Dam Stopper",
+      "Solventless Lamination Teflon Dam",
+      "Flexible Packaging Machinery"
+    ],
     "contactPoint": [
       {
         "@type": "ContactPoint",
@@ -43,12 +54,22 @@ const Home = () => {
   const productSchema = {
     "@context": "https://schema.org/",
     "@type": "Product",
-    "name": "Teflon Dam for Nord Super Simplex & Super Combi",
-    "image": "https://www.teflondam.com/TEFLON%20DAM/TEFLON%20DAM%20NORD%20SUPER%20SIMPLEX%20AND%20SUPER%20COMBI/TEFLON%20DAM%20NORD%20SUPER%20SIMPLEX%2C%20S.%20COMBI.png",
-    "description": "Premium machine-specific Teflon Dam designed for Nord Super Simplex and Super Combi solventless lamination machines.",
+    "name": "Precision PTFE Teflon Dam & Adhesive Stopper",
+    "image": "https://www.teflondam.com/heroimage.webp",
+    "description": "Industrial grade machine-specific PTFE Teflon Dam and adhesive stopper designed for Nordmeccanica, Bobst, Uteco, and Comexi solventless lamination machines.",
+    "category": "Teflon Dam Manufacturer & Exporter",
     "brand": {
       "@type": "Brand",
       "name": "ImageTech Industries"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.teflondam.com/",
+      "priceCurrency": "INR",
+      "price": "2400",
+      "priceValidUntil": "2027-12-31",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -60,9 +81,24 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="Premium Teflon Dams for Solventless Lamination Machines"
-        description="ImageTech Industries is India's leading manufacturer of high-quality, machine-specific Teflon Dams for solventless lamination machines like Nord, Bobst, Uteco, and Comexi."
-        keywords={['Teflon Dam', 'Solventless Lamination Machine Accessory', 'Teflon Dam for Nord', 'Teflon Dam for Bobst', 'Teflon Dam for Uteco', 'Teflon Dam for Comexi', 'ImageTech Industries']}
+        title="Teflon Dam Manufacturer & Exporter in India | Teflon Dam for Printing Machines, Adhesive Teflon Dam - ImageTech Industries"
+        description="India's leading Teflon Dam manufacturer & exporter. High-precision PTFE Teflon dams, adhesive teflon Dam, Teflon Dam Stopper & side seals for Nordmeccanica, Bobst, Uteco & Comexi solventless lamination machines. Buy at best factory price."
+        keywords={[
+          'Teflon Dam',
+          'Teflon Dam Manufacturer & Exporter',
+          'Teflon Dam Manufacturer in India',
+          'PTFE Dam',
+          'Adhesive Teflon Dam',
+          'Teflon Dam Stopper',
+          'Solventless Lamination Teflon Dam',
+          'PTFE Adhesive Barrier',
+          'Teflon Dam for Nordmeccanica',
+          'Teflon Dam for Bobst',
+          'Teflon Dam for Uteco',
+          'Teflon Dam for Comexi',
+          'Teflon Dam Price',
+          'ImageTech Industries'
+        ]}
         schema={[orgSchema, productSchema]}
       />
       <main className="flex flex-col">

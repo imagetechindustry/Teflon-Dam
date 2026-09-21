@@ -30,7 +30,7 @@ const CertificationScope = () => {
           </h2>
           <p className="text-lg text-gray-900">
             Our ISO 9001:2015 certification formally covers a comprehensive
-            range of premium Teflon Dams and industrial products designed for
+            range of precision CNC Teflon Dams and industrial products designed for
             precision and reliability in solventless lamination.
           </p>
         </div>

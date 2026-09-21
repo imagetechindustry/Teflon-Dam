@@ -76,10 +76,10 @@ const HomeAbout = ({ locationData }) => {
               About ImageTech Industries
             </h4>
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-6">
-              Leading Manufacturer & Supplier of Premium Teflon Dams {locationData ? `in ${locationData.name}` : 'in India'}
+              Leading Manufacturer & Exporter of Teflon Dams {locationData ? `in ${locationData.name}` : 'in India'}
             </h2>
             <p className="text-lg text-gray-900 mb-8 leading-relaxed ">
-              ImageTech Industries is India's premier manufacturer and supplier of high-quality <strong>Teflon Dams</strong> for solventless lamination machines. Operating from Delhi, we specialize in delivering machine-specific lamination accessories that guarantee absolute compatibility, eliminate operational downtime, and boost continuous production speeds. Whether you need a robust Teflon Dam for Nord Super Simplex, Super Combi, Bobst, Uteco, or Comexi, our precision-engineered solutions are trusted by top flexible packaging companies globally to maintain flawless lamination quality.
+              ImageTech Industries is India's leading manufacturer and exporter of precision <strong>Teflon Dams</strong> for solventless lamination machines. Operating from Delhi, we specialize in delivering machine-specific lamination accessories that guarantee absolute compatibility, eliminate operational downtime, and boost continuous production speeds. Whether you need a robust Teflon Dam for Nord Super Simplex, Super Combi, Bobst, Uteco, or Comexi, our precision-engineered solutions are trusted by top flexible packaging companies globally to maintain flawless lamination quality.
             </p>
             <Link
               to="/about"

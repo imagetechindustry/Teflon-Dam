@@ -614,10 +614,10 @@ const Footer = () => {
               </div>
               <div>
                 <h5 className="font-bold text-gray-900 mb-1">
-                  Premium Quality
+                  Certified Virgin PTFE
                 </h5>
                 <p className="text-xs text-gray-900 leading-snug">
-                  Products manufactured to the highest standards
+                  100% pure food-grade polymer manufacturing
                 </p>
               </div>
             </div>

@@ -9,7 +9,7 @@ const faqData = [
   { question: "Where is this Teflon Dam used?", answer: "It is used in solventless lamination equipment, specifically for flexible packaging, printing, and related industrial converting applications." },
   { question: "Is this Teflon Dam suitable for replacement?", answer: "Yes, it is designed for quick and easy replacement when required during regular maintenance or scheduled machine servicing." },
   { question: "Why is the machine model important when ordering a Teflon Dam?", answer: "The exact machine model must be confirmed to ensure absolute compatibility. The precise design guarantees a proper fit with your lamination setup, avoiding downtime." },
-  { question: "How does a Teflon Dam improve lamination efficiency?", answer: "By providing a precise fit and highly reliable performance, a premium Teflon Dam reduces unexpected downtime, minimizes maintenance hurdles, and maintains continuous production." },
+  { question: "How does a Teflon Dam improve lamination efficiency?", answer: "By providing a precise fit and highly reliable performance, a precision CNC Teflon Dam reduces unexpected downtime, minimizes maintenance hurdles, and maintains continuous production." },
   { question: "Do you supply custom Teflon Dams?", answer: "Yes, we can supply customized Teflon Dams based on your specific lamination machine configurations. Please contact our technical support team for custom requirements." },
   { question: "How often should a Teflon Dam be replaced?", answer: "Replacement frequency depends heavily on your production volume, running speeds, and overall machine usage. We recommend regular inspection during your scheduled maintenance cycles to ensure optimal performance." }
 ];
@@ -36,7 +36,7 @@ const HomeFAQ = ({ locationData }) => {
       <FAQSection
         title={`Everything You Need To Know About Teflon Dams ${locationData ? `in ${locationData.name}` : ''}`}
         subtitle="Frequently Asked Questions"
-        description="Find answers to the most common questions about our premium Teflon Dams for various solventless lamination machines."
+        description="Find answers to the most common questions about machine-specific Teflon Dams for various solventless lamination machines."
         faqs={faqData}
       />
     </>

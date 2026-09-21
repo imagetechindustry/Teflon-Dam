@@ -56,7 +56,7 @@ const AboutCapabilities = () => {
             </h2>
             <p className="text-gray-900 mb-8 leading-relaxed">
               We combine modern manufacturing technology with strict quality
-              control processes to manufacture premium, machine-specific Teflon Dams
+              control processes to manufacture precision CNC, machine-specific Teflon Dams
               that meet exact global standards for solventless lamination.
             </p>
 

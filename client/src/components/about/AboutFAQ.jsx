@@ -14,7 +14,7 @@ const aboutFaqData = [
   {
     question: "What industries do you primarily serve?",
     answer:
-    "We primarily serve the flexible packaging and converting industries. Our premium Teflon Dams are used extensively in high-speed solventless lamination applications.",
+    "We primarily serve the flexible packaging and converting industries. Our precision virgin PTFE Teflon Dams are used extensively in high-speed solventless lamination applications.",
   },
   {
     question: "Are you an ISO certified company?",

@@ -33,7 +33,7 @@ const CertificationsHero = () => {
         </h1>
 
         <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-slate-300 leading-relaxed">
-          At ImageTech Industries, our commitment to manufacturing premium Teflon Dams is validated by
+          At ImageTech Industries, our commitment to manufacturing precision virgin PTFE Teflon Dams is validated by
           internationally recognized quality standards, ensuring we deliver reliable,
           high-performance solventless lamination accessories every time.
         </p>

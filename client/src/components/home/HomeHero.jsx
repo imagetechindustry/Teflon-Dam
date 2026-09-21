@@ -20,14 +20,14 @@ const HomeHero = ({ locationData }) => {
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-tight">
-              Premium <span className="text-blue-600">Teflon Dam</span> <br />
+              <span className="text-blue-600">Teflon Dam</span> <br />
               <span className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-gray-900 font-bold">
-                {locationData ? `Manufacturer in ${locationData.name}` : "Manufacturer in India"}
+                {locationData ? `Manufacturer in ${locationData.name}` : "Best Teflon Dam Manufacturer & Exporter in India"}
               </span>
             </h1>
 
             <p className="text-lg text-gray-900 max-w-xl">
-              ImageTech Industries is widely recognized for supplying the best machine-specific Teflon Dams in India. We offer premium accessories that ensure proper fitting and reliable performance for your solventless lamination applications.
+              ImageTech Industries is India's premier <strong>Teflon Dam manufacturer &amp; exporter</strong>. We engineer high-precision virgin PTFE dams and adhesive stoppers for solventless lamination machines (Nordmeccanica, Bobst, Uteco, Comexi) with a 100% zero-leak, roll-protection guarantee.
             </p>
 
             <div className="flex flex-row gap-2 sm:gap-4 overflow-x-auto hide-scrollbar pb-1">

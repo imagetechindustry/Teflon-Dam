@@ -127,7 +127,7 @@ const HomeCertifications = ({ locationData }) => {
                 </div>
                 <div className="ml-4">
                   <h4 className="font-bold text-gray-900 text-sm">
-                    Premium Raw Materials
+                    Certified Virgin PTFE
                   </h4>
                   <p className="text-xs text-gray-900 mt-1">
                     For long service life

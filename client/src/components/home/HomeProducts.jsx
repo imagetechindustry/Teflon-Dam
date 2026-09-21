@@ -24,7 +24,7 @@ const HomeProducts = ({ locationData }) => {
               Our Products
             </h4>
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
-              Premium Teflon Dams & Solventless Lamination Accessories {locationData ? `in ${locationData.name}` : ''}
+              Precision PTFE Teflon Dams & Solventless Lamination Accessories {locationData ? `in ${locationData.name}` : ''}
             </h2>
             <p className="mt-4 text-lg text-gray-900 max-w-2xl">
               Explore our extensive range of high-quality, machine-specific Teflon Dams. Engineered for perfect fit and continuous reliable performance, our products cater to industry-leading solventless lamination machines including Nord, Bobst, Uteco, and Comexi.

@@ -179,16 +179,17 @@ export default function TroubleshootingGuide() {
   return (
     <>
       <SEO
-        title="Teflon Dam Defect Troubleshooting Guide | Solventless Lamination"
-        description="Comprehensive troubleshooting guide for Teflon Dams and solventless lamination press defects. Solve adhesive edge oozing, friction overheating, roller scoring, and dam wear."
+        title="Teflon Dam Defect Troubleshooting Guide | Solve Adhesive Leaks"
+        description="Comprehensive troubleshooting guide for Teflon Dams and solventless lamination press defects. Eliminate adhesive edge oozing, friction overheating, and roller scoring."
         keywords={[
           "teflon dam troubleshooting",
-          "solventless lamination adhesive leaking",
-          "teflon dam adhesive oozing",
-          "lamination edge bead defects",
-          "roller scoring prevention",
-          "nordmeccanica teflon dam leak",
-          "teflon dam cleaning sop",
+          "teflon dam manufacturer & exporter",
+          "adhesive leaking from teflon dam",
+          "solventless lamination roller scoring",
+          "teflon dam friction heating",
+          "ptfe dam maintenance SOP",
+          "solve lamination edge oozing",
+          "teflon dam replacement guide",
           "imagetech industries",
         ]}
         schema={[articleSchema, howToSchema, faqSchema, breadcrumbSchema]}

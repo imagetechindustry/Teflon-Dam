@@ -28,9 +28,9 @@ const AboutUs = () => {
   return (
     <>
       <SEO 
-        title="About Us | ImageTech Industries"
-        description="Learn about ImageTech Industries, a trusted supplier of Teflon Dams in Delhi, India. Discover our history, manufacturing capabilities, and global presence."
-        keywords={['about imagetech industries', 'teflon dam supplier', 'solventless lamination accessories', 'nord super simplex teflon dam']}
+        title="About ImageTech Industries | Premier Teflon Dam Manufacturer & Exporter"
+        description="Discover ImageTech Industries, India's leading manufacturer & exporter of precision PTFE Teflon dams, adhesive stoppers, and solventless lamination press accessories."
+        keywords={['about imagetech industries', 'teflon dam manufacturer & exporter', 'teflon dam manufacturer in india', 'ptfe dam manufacturer', 'solventless lamination accessories', 'nord super simplex teflon dam']}
         schema={aboutSchema}
       />
       <main>

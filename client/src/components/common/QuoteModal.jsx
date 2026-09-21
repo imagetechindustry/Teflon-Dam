@@ -282,13 +282,13 @@ export default function QuoteModal() {
             <div className="flex items-center gap-3 mb-5 md:mb-6">
               <img src="/logo.png" alt="Teflon Dam Logo" className="h-9 md:h-10 w-auto object-contain" />
               <div className="text-[9px] text-slate-500 font-bold leading-tight border-l-2 border-slate-300 pl-3 uppercase tracking-wider">
-                Premium Teflon Dams<br />For Lamination Machines
+                Precision Teflon Dams<br />For Lamination Machines
               </div>
             </div>
 
             {/* Left-Aligned Headline with exact 4-line breakdown leaving right side for products */}
             <h2 className="text-[22px] sm:text-[26px] md:text-3xl lg:text-[34px] font-black mb-2 md:mb-3 tracking-tight leading-[1.1] text-slate-800 drop-shadow-sm w-full md:max-w-[48%] z-20 relative text-left">
-              Premium Teflon Dams<br />
+              Precision Teflon Dams<br />
               for <span className="text-blue-600">Solventless<br /></span>
               <span className="text-blue-600">Lamination</span>
             </h2>
@@ -298,7 +298,7 @@ export default function QuoteModal() {
 
             {/* Description */}
             <p className="text-[11px] lg:text-xs text-slate-600 leading-relaxed font-bold max-w-[85%] md:max-w-[45%] mb-6 md:mb-8 z-20 relative text-left">
-              We supply premium machine-specific Teflon Dams for solventless lamination machines like Nord, Bobst, Uteco, and Comexi.
+              We supply precision machine-specific Teflon Dams for solventless lamination machines like Nord, Bobst, Uteco, and Comexi.
             </p>
 
             {/* Horizontal Feature Badges */}
@@ -308,7 +308,7 @@ export default function QuoteModal() {
                   <CheckCircle2Icon className="w-5 h-5" />
                 </div>
                 <span className="text-[9px] font-bold text-slate-700 leading-tight">
-                  Premium<br />Quality
+                  Virgin PTFE<br />Certified
                 </span>
               </div>
               <div className="flex flex-col items-center text-center">

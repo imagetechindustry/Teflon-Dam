@@ -38,7 +38,7 @@ const AboutVisionMission = () => {
               Our Mission
             </h4>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">
-              Delivering Premium Teflon Dams Through Innovation
+              Delivering Precision Teflon Dams Through Innovation
             </h2>
             <p className="text-gray-900 text-lg leading-relaxed">
               To manufacture high-quality, precision-engineered Teflon Dams by combining

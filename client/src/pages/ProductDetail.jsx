@@ -49,6 +49,16 @@ const ProductDetail = () => {
       <SEO
         title={`${product.metaTitle}`}
         description={product.metaDescription}
+        keywords={[
+          product.name,
+          'Teflon Dam Manufacturer & Exporter',
+          'Teflon Dam',
+          'PTFE Dam',
+          'Adhesive Teflon Dam',
+          'Teflon Dam Stopper',
+          'Solventless Lamination Teflon Dam',
+          'ImageTech Industries'
+        ]}
         schema={[productSchema, faqSchema]}
       />
       <div className="bg-slate-50 min-h-screen py-4 lg:py-8">

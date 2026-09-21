@@ -17,7 +17,7 @@ const AboutStory = () => {
             <div className="text-gray-900 space-y-5 mb-8">
               <p>
                 Established in 1992, ImageTech Industries began its journey with
-                a clear vision — to become the most trusted manufacturer and supplier of premium Teflon Dams in India. We aim to deliver highly reliable machine-specific lamination accessories that help businesses achieve flawless lamination quality, higher press speeds, and long-term value.
+                a clear vision — to become the most trusted manufacturer and exporter of precision Teflon Dams in India. We aim to deliver highly reliable machine-specific lamination accessories that help businesses achieve flawless lamination quality, higher press speeds, and long-term value.
               </p>
               <p>
                 Over the years, we have grown through constant innovation and
