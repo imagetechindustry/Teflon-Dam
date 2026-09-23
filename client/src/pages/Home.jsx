@@ -55,7 +55,7 @@ const Home = () => {
     "@context": "https://schema.org/",
     "@type": "Product",
     "name": "Precision PTFE Teflon Dam & Adhesive Stopper",
-    "image": "https://www.teflondam.com/heroimage.webp",
+    "image": "https://www.teflondam.com/logo.png",
     "description": "Industrial grade machine-specific PTFE Teflon Dam and adhesive stopper designed for Nordmeccanica, Bobst, Uteco, and Comexi solventless lamination machines.",
     "category": "Teflon Dam Manufacturer & Exporter",
     "brand": {
