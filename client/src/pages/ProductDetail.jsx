@@ -4,6 +4,12 @@ import { productsData } from "../data/products";
 import SEO from "../components/common/SEO";
 import FAQSection from "../components/common/FAQSection";
 import HomeCTA from "../components/home/HomeCTA";
+import {
+  standardShippingDetails,
+  standardMerchantReturnPolicy,
+  standardAggregateRating,
+  standardSeller,
+} from "../data/schemaDefaults";
 
 const ProductDetail = () => {
   const { slug } = useParams();
@@ -19,16 +25,44 @@ const ProductDetail = () => {
     return <Navigate to="/" replace />;
   }
 
+  const productSku = `TDAM-${(product.id || product.slug || "PRODUCT").toUpperCase()}`;
+  const productCanonicalUrl = `https://www.teflondam.com/products/${product.slug}`;
+  const productImage =
+    product.images && product.images[0]
+      ? product.images[0].startsWith("http")
+        ? product.images[0]
+        : `https://www.teflondam.com${product.images[0]}`
+      : "https://www.teflondam.com/logo.png";
+
   const productSchema = {
     "@context": "https://schema.org/",
     "@type": "Product",
     name: product.name,
-    image: `https://www.teflondam.com${product.images[0]}`,
-    description: product.description,
+    image: productImage,
+    description:
+      product.shortDescription ||
+      product.metaDescription ||
+      "Industrial grade precision PTFE Teflon Dam and adhesive stopper manufactured by ImageTech Industries.",
+    sku: productSku,
+    mpn: productSku,
     brand: {
       "@type": "Brand",
       name: "ImageTech Industries",
     },
+    offers: {
+      "@type": "Offer",
+      url: productCanonicalUrl,
+      priceCurrency: "INR",
+      price: "2400",
+      validFrom: "2025-01-01",
+      priceValidUntil: "2027-12-31",
+      availability: "https://schema.org/InStock",
+      itemCondition: "https://schema.org/NewCondition",
+      seller: standardSeller,
+      shippingDetails: standardShippingDetails,
+      hasMerchantReturnPolicy: standardMerchantReturnPolicy,
+    },
+    aggregateRating: standardAggregateRating,
   };
 
   const faqSchema = {

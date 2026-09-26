@@ -11,6 +11,12 @@ import HomeCertifications from "../components/home/HomeCertifications";
 import HomeWhyChoose from "../components/home/HomeWhyChoose";
 import HomeFAQ from "../components/home/HomeFAQ";
 import HomeCTA from "../components/home/HomeCTA";
+import {
+  standardShippingDetails,
+  standardMerchantReturnPolicy,
+  standardAggregateRating,
+  standardSeller,
+} from "../data/schemaDefaults";
 
 const CityPageSkeleton = () => (
   <div className="w-full animate-pulse">
@@ -145,17 +151,36 @@ const CityPage = () => {
     }
   };
 
+  const citySku = `TDAM-${locationSlug.toUpperCase()}`;
+  const cityCanonicalUrl = `https://www.teflondam.com/${locationSlug}`;
+
   const productSchema = {
     "@context": "https://schema.org/",
     "@type": "Product",
-    "name": "Teflon Dams",
+    "name": `Teflon Dams in ${locName}`,
     "image": "https://www.teflondam.com/heroimage.webp",
-    "description": `Precision CNC Teflon Dams available in ${locName}, ${locState}. Designed for solventless lamination presses.`,
+    "description": `Precision CNC PTFE Teflon Dams and adhesive stoppers available in ${locName}, ${locState}. Designed for solventless lamination presses.`,
+    "sku": citySku,
+    "mpn": citySku,
     "brand": {
       "@type": "Brand",
       "name": "ImageTech Industries"
     },
-    "areaServed": locName
+    "areaServed": locName,
+    "offers": {
+      "@type": "Offer",
+      "url": cityCanonicalUrl,
+      "priceCurrency": "INR",
+      "price": "2400",
+      "validFrom": "2025-01-01",
+      "priceValidUntil": "2027-12-31",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": standardSeller,
+      "shippingDetails": standardShippingDetails,
+      "hasMerchantReturnPolicy": standardMerchantReturnPolicy
+    },
+    "aggregateRating": standardAggregateRating
   };
 
   return (

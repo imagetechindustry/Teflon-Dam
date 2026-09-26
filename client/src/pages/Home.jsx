@@ -12,6 +12,13 @@ import HomeFAQ from "../components/home/HomeFAQ";
 import HomeCTA from "../components/home/HomeCTA";
 import SEO from "../components/common/SEO";
 
+import {
+  standardShippingDetails,
+  standardMerchantReturnPolicy,
+  standardAggregateRating,
+  standardSeller,
+} from "../data/schemaDefaults";
+
 const Home = () => {
   const orgSchema = {
     "@context": "https://schema.org",
@@ -58,6 +65,8 @@ const Home = () => {
     "image": "https://www.teflondam.com/logo.png",
     "description": "Industrial grade machine-specific PTFE Teflon Dam and adhesive stopper designed for Nordmeccanica, Bobst, Uteco, and Comexi solventless lamination machines.",
     "category": "Teflon Dam Manufacturer & Exporter",
+    "sku": "TDAM-UNIVERSAL",
+    "mpn": "TDAM-UNIVERSAL",
     "brand": {
       "@type": "Brand",
       "name": "ImageTech Industries"
@@ -67,15 +76,15 @@ const Home = () => {
       "url": "https://www.teflondam.com/",
       "priceCurrency": "INR",
       "price": "2400",
+      "validFrom": "2025-01-01",
       "priceValidUntil": "2027-12-31",
       "availability": "https://schema.org/InStock",
-      "itemCondition": "https://schema.org/NewCondition"
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": standardSeller,
+      "shippingDetails": standardShippingDetails,
+      "hasMerchantReturnPolicy": standardMerchantReturnPolicy
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "120"
-    }
+    "aggregateRating": standardAggregateRating
   };
 
   return (

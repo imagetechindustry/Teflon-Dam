@@ -6,6 +6,12 @@ import SEO from "../components/common/SEO";
 import NotFound from "../components/common/NotFound";
 import FAQSection from "../components/common/FAQSection";
 import HomeCTA from "../components/home/HomeCTA";
+import {
+  standardShippingDetails,
+  standardMerchantReturnPolicy,
+  standardAggregateRating,
+  standardSeller,
+} from "../data/schemaDefaults";
 
 const CityProductPageSkeleton = () => (
   <div className="bg-slate-50 min-h-screen py-6 lg:py-10 animate-pulse">
@@ -160,6 +166,9 @@ const CityProductPage = () => {
     ...(product.faqs || [])
   ];
 
+  const cityProductSku = `TDAM-${locationSlug.toUpperCase()}-${(product.id || product.slug || "PRODUCT").toUpperCase()}`;
+  const cityProductCanonicalUrl = `https://www.teflondam.com/${locationSlug}/${product.slug}`;
+
   const productSchema = {
     "@context": "https://schema.org/",
     "@type": "Product",
@@ -168,6 +177,8 @@ const CityProductPage = () => {
       ? images[0]
       : `https://www.teflondam.com${images[0]}`,
     description: `${product.shortDescription} Manufactured and supplied by ImageTech Industries in ${location.name}, ${location.state}.`,
+    sku: cityProductSku,
+    mpn: cityProductSku,
     brand: {
       "@type": "Brand",
       name: "ImageTech Industries",
@@ -176,6 +187,20 @@ const CityProductPage = () => {
       "@type": "AdministrativeArea",
       name: `${location.name}, ${location.state}`,
     },
+    offers: {
+      "@type": "Offer",
+      url: cityProductCanonicalUrl,
+      priceCurrency: "INR",
+      price: "2400",
+      validFrom: "2025-01-01",
+      priceValidUntil: "2027-12-31",
+      availability: "https://schema.org/InStock",
+      itemCondition: "https://schema.org/NewCondition",
+      seller: standardSeller,
+      shippingDetails: standardShippingDetails,
+      hasMerchantReturnPolicy: standardMerchantReturnPolicy,
+    },
+    aggregateRating: standardAggregateRating,
   };
 
   const faqSchema = {
