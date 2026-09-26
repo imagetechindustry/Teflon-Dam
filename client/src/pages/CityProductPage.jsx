@@ -11,6 +11,7 @@ import {
   standardMerchantReturnPolicy,
   standardAggregateRating,
   standardSeller,
+  getProductModelCode,
 } from "../data/schemaDefaults";
 
 const CityProductPageSkeleton = () => (
@@ -166,7 +167,9 @@ const CityProductPage = () => {
     ...(product.faqs || [])
   ];
 
-  const cityProductSku = `TDAM-${locationSlug.toUpperCase()}-${(product.id || product.slug || "PRODUCT").toUpperCase()}`;
+  const modelCode = getProductModelCode(product.id || product.slug);
+  const cityCode = locationSlug ? locationSlug.toUpperCase().substring(0, 20) : "IN";
+  const cityProductSku = `TDAM-${cityCode}-${modelCode}`;
   const cityProductCanonicalUrl = `https://www.teflondam.com/${locationSlug}/${product.slug}`;
 
   const productSchema = {

@@ -151,7 +151,7 @@ const CityPage = () => {
     }
   };
 
-  const citySku = `TDAM-${locationSlug.toUpperCase()}`;
+  const citySku = `TDAM-${(locationSlug || "IN").toUpperCase().substring(0, 25)}`;
   const cityCanonicalUrl = `https://www.teflondam.com/${locationSlug}`;
 
   const productSchema = {

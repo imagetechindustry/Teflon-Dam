@@ -9,6 +9,7 @@ import {
   standardMerchantReturnPolicy,
   standardAggregateRating,
   standardSeller,
+  getProductModelCode,
 } from "../data/schemaDefaults";
 
 const ProductDetail = () => {
@@ -25,7 +26,7 @@ const ProductDetail = () => {
     return <Navigate to="/" replace />;
   }
 
-  const productSku = `TDAM-${(product.id || product.slug || "PRODUCT").toUpperCase()}`;
+  const productSku = `TDAM-${getProductModelCode(product.id || product.slug)}`;
   const productCanonicalUrl = `https://www.teflondam.com/products/${product.slug}`;
   const productImage =
     product.images && product.images[0]

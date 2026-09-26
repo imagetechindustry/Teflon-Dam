@@ -47,3 +47,18 @@ export const standardSeller = {
   "@type": "Organization",
   name: "ImageTech Industries"
 };
+
+/**
+ * Returns a concise machine/model code (max 10 chars) for valid Google Search Console SKU/MPN strings.
+ * Google Merchant Rich Snippets require SKU string length to be under 50 characters.
+ */
+export const getProductModelCode = (identifier = "") => {
+  const str = String(identifier).toLowerCase();
+  if (str.includes("nord")) return "NORD";
+  if (str.includes("bobst")) return "BOBST";
+  if (str.includes("uteco")) return "UTECO";
+  if (str.includes("comexi")) return "COMEXI";
+  const clean = str.replace(/[^a-z0-9]/gi, "").substring(0, 10).toUpperCase();
+  return clean || "STD";
+};
+
