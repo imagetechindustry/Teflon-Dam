@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   Navigate,
+  useLocation,
 } from "react-router-dom";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
@@ -24,6 +25,8 @@ import TroubleshootingGuide from "./pages/TroubleshootingGuide";
 import WorkingPrinciple from "./pages/WorkingPrinciple";
 import PressApplications from "./pages/PressApplications";
 import { usePrefetchLocations } from "./services/api";
+import BlogList from "./pages/BlogList";
+import BlogPost from "./pages/BlogPost";
 
 // Admin
 import { AdminAuthProvider } from "./context/AdminAuthContext";
@@ -32,6 +35,7 @@ import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import { AdminQuotes, AdminContacts } from "./pages/admin/AdminSubmissions";
 import AdminLocations from "./pages/admin/AdminLocations";
+import AdminBlogs from "./pages/admin/AdminBlogs";
 
 // Layout wrapper for public pages (includes Navbar + Footer)
 const PublicLayout = ({ children }) => (
@@ -42,6 +46,17 @@ const PublicLayout = ({ children }) => (
     <QuoteModal />
   </div>
 );
+
+// Scroll to top automatically on route transitions
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 function App() {
   const prefetchLocations = usePrefetchLocations();
@@ -58,6 +73,7 @@ function App() {
   return (
     <AdminAuthProvider>
       <Router>
+        <ScrollToTop />
         <Routes>
           {/* ── Public routes ── */}
           <Route
@@ -181,6 +197,22 @@ function App() {
               </PublicLayout>
             }
           />
+          <Route
+            path="/blog"
+            element={
+              <PublicLayout>
+                <BlogList />
+              </PublicLayout>
+            }
+          />
+          <Route
+            path="/blog/:slug"
+            element={
+              <PublicLayout>
+                <BlogPost />
+              </PublicLayout>
+            }
+          />
 
           {/* ── Admin routes ── */}
           <Route
@@ -201,6 +233,14 @@ function App() {
             element={
               <AdminProtectedRoute>
                 <AdminLocations />
+              </AdminProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/blogs"
+            element={
+              <AdminProtectedRoute>
+                <AdminBlogs />
               </AdminProtectedRoute>
             }
           />

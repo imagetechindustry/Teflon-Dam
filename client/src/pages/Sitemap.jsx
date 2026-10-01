@@ -286,6 +286,31 @@ const Sitemap = () => {
                 Open Guide →
               </span>
             </Link>
+
+            <Link
+              to="/blog"
+              className="group p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-blue-50/40 transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="w-8 h-8 rounded-xl bg-rose-600 text-white flex items-center justify-center font-bold text-xs">
+                    05
+                  </span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-rose-100 text-rose-800">
+                    Articles
+                  </span>
+                </div>
+                <h3 className="font-extrabold text-sm text-slate-900 group-hover:text-blue-600 transition-colors mb-1">
+                  Articles & Technical Blog
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Operational blueprints, leak prevention protocols, and PTFE material science insights.
+                </p>
+              </div>
+              <span className="text-xs font-bold text-blue-600 mt-3 inline-flex items-center">
+                Read Articles →
+              </span>
+            </Link>
           </div>
         </div>
       </div>

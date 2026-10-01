@@ -154,6 +154,17 @@ const Navbar = () => {
             </Link>
 
             <Link
+              to="/blog"
+              className={`flex items-center px-3 py-2 text-sm font-semibold rounded-md transition-colors ${
+                isActive("/blog")
+                  ? "text-blue-600 border-b-2 border-blue-600"
+                  : "text-gray-900 font-bold hover:text-blue-600"
+              }`}
+            >
+              Blog
+            </Link>
+
+            <Link
               to="/sitemap"
               className={`flex items-center px-3 py-2 text-sm font-semibold rounded-md transition-colors ${
                 isActive("/sitemap")
@@ -326,6 +337,18 @@ const Navbar = () => {
               }`}
             >
               Certifications
+            </Link>
+
+            <Link
+              to="/blog"
+              onClick={() => setIsOpen(false)}
+              className={`block px-3 py-3 rounded-md text-base font-semibold ${
+                isActive("/blog")
+                  ? "text-blue-600 bg-blue-50"
+                  : "text-gray-900 font-bold hover:text-blue-600 hover:bg-gray-50"
+              }`}
+            >
+              Blog & Insights
             </Link>
 
             <Link

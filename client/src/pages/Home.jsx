@@ -8,6 +8,7 @@ import HomeIndustries from "../components/home/HomeIndustries";
 import HomeAbout from "../components/home/HomeAbout";
 import HomeCertifications from "../components/home/HomeCertifications";
 import HomeWhyChoose from "../components/home/HomeWhyChoose";
+import HomeInsights from "../components/home/HomeInsights";
 import HomeFAQ from "../components/home/HomeFAQ";
 import HomeCTA from "../components/home/HomeCTA";
 import SEO from "../components/common/SEO";
@@ -121,6 +122,7 @@ const Home = () => {
         <HomeAnatomy />
         <HomeMachineMatrix />
         <HomeConvertingIntegration />
+        <HomeInsights />
         <HomeFAQ />
         <HomeCTA />
       </main>
