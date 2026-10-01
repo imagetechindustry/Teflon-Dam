@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useLocations, usePrefetchLocation } from "../services/api";
+import { useLocations, usePrefetchLocation, useProducts } from "../services/api";
 import SEO from "../components/common/SEO";
 
 const SitemapSkeleton = () => (
@@ -38,6 +38,7 @@ const Sitemap = () => {
   }, []);
 
   const { data: locations = [], isLoading } = useLocations();
+  const { data: productsList = [] } = useProducts("teflon-dam");
 
   // Group locations by state
   const groupedLocations = locations.reduce((acc, loc) => {
@@ -127,6 +128,48 @@ const Sitemap = () => {
             )}
           </div>
         )}
+
+        {/* Dynamic Products Directory */}
+        {productsList.length > 0 && (
+          <div className="mb-14 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-slate-100">
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-widest text-blue-600 block">
+                  Product Models
+                </span>
+                <h2 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+                  Teflon Dam Models & Specifications
+                </h2>
+              </div>
+              <span className="text-xs font-bold text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200 shrink-0">
+                {productsList.length} Precision Models
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {productsList.map((prod) => (
+                <Link
+                  key={prod.id || prod.slug}
+                  to={`/products/${prod.slug}`}
+                  className="group p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-blue-50/40 transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    <h3 className="font-extrabold text-sm text-slate-900 group-hover:text-blue-600 transition-colors mb-1 leading-snug">
+                      {prod.title || prod.name}
+                    </h3>
+                    <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
+                      {prod.shortDesc || prod.shortDescription}
+                    </p>
+                  </div>
+                  <span className="text-xs font-bold text-blue-600 mt-3 inline-flex items-center">
+                    View Product Details →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Technical Guides & Engineering Directory */}
         <div className="mb-14 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-slate-100">

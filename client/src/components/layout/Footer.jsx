@@ -1,7 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useProducts } from "../../services/api";
+
+const popularProducts = [
+  { title: "Teflon Dam for Nordmeccanica Super Simplex & Super Combi", slug: "teflon-dam-for-nordmeccanica-super-simplex-super-combi" },
+  { title: "Teflon Dam for Pelican Solventless Lamination", slug: "teflon-dam-for-pelican" },
+  { title: "Teflon Dam for Nordmeccanica Simplex", slug: "teflon-dam-for-nordmeccanica-simplex" },
+  { title: "Teflon Dam for Sai Converting", slug: "teflon-dam-for-sai-converting" },
+  { title: "Teflon Dam for Fadia Solventless Lamination", slug: "teflon-dam-for-fadia" },
+  { title: "Teflon Dam for Mamta Converting", slug: "teflon-dam-for-mamta-converting" },
+  { title: "Teflon Dam for Canara Flex Model A", slug: "teflon-dam-for-canara-flex-model-a" },
+  { title: "Teflon Dam for Kohli 210 / 220", slug: "teflon-dam-for-kohli-210" },
+];
 
 const Footer = () => {
+  const { data: apiProducts = [] } = useProducts("teflon-dam");
+  const displayProducts =
+    apiProducts && apiProducts.length > 0
+      ? apiProducts.slice(0, 8)
+      : popularProducts;
   return (
     <footer className="bg-white text-gray-900 font-bold border-t border-gray-200 pt-16 mt-auto">
       {/* Top Section */}
@@ -267,13 +284,39 @@ const Footer = () => {
               OUR PRODUCTS
             </h4>
             <ul className="space-y-3 text-sm text-gray-900 font-bold font-semibold">
+              {displayProducts.map((p) => (
+                <li key={p.id || p.slug}>
+                  <Link
+                    to={`/products/${p.slug}`}
+                    className="hover:text-blue-600 flex items-start transition-colors group"
+                  >
+                    <svg
+                      className="w-3 h-3 text-blue-500 mr-2 mt-1 shrink-0 group-hover:translate-x-0.5 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                    <span className="leading-snug">{p.title || p.name}</span>
+                  </Link>
+                </li>
+              ))}
               <li>
-                <Link
-                  to="/products/teflon-dam-for-nord-super-simplex-and-super-combi"
-                  className="hover:text-blue-600 flex items-start transition-colors"
+                <a
+                  href="https://www.imagetechindustries.com/products?category=teflon-dam"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800 text-xs font-bold inline-flex items-center mt-2 group"
                 >
+                  <span>View All Products ({apiProducts.length || 13})</span>
                   <svg
-                    className="w-3 h-3 text-blue-500 mr-2 mt-1 shrink-0"
+                    className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -285,71 +328,7 @@ const Footer = () => {
                       d="M9 5l7 7-7 7"
                     />
                   </svg>
-                  <span>Teflon Dam for Nord</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/products/teflon-dam-for-bobst"
-                  className="hover:text-blue-600 flex items-start transition-colors"
-                >
-                  <svg
-                    className="w-3 h-3 text-blue-500 mr-2 mt-1 shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                  <span>Teflon Dam for Bobst</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/products/teflon-dam-for-uteco"
-                  className="hover:text-blue-600 flex items-start transition-colors"
-                >
-                  <svg
-                    className="w-3 h-3 text-blue-500 mr-2 mt-1 shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                  <span>Teflon Dam for Uteco</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/products/teflon-dam-for-comexi"
-                  className="hover:text-blue-600 flex items-start transition-colors"
-                >
-                  <svg
-                    className="w-3 h-3 text-blue-500 mr-2 mt-1 shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                  <span>Teflon Dam for Comexi</span>
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
