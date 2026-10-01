@@ -32,10 +32,13 @@ export default function SEO({
     ? title
     : `${title} | ${name}`;
 
-  // Keep document.title immediately in sync
-  React.useEffect(() => {
+  // Keep document.title immediately in sync and clean up static fallback tags synchronously before paint
+  React.useLayoutEffect(() => {
     if (fullTitle) {
       document.title = fullTitle;
+    }
+    if (typeof document !== 'undefined') {
+      document.querySelectorAll("[data-static='true']").forEach((el) => el.remove());
     }
   }, [fullTitle]);
 

@@ -291,32 +291,32 @@ export default function BlogPost() {
     : "Teflon Dam Article";
   const slugCanonical = `https://www.teflondam.com/blog/${slug}`;
 
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-white py-16">
-        <SEO
-          title={`${fallbackTitle} | ImageTech Journal`}
-          description="Read our latest technical insights on Teflon dams, solventless lamination, and converting."
-          canonicalUrl={slugCanonical}
-        />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="animate-pulse space-y-6">
-            <div className="h-4 bg-slate-100 rounded w-1/4" />
-            <div className="h-12 bg-slate-100 rounded w-4/5" />
-            <div className="h-6 bg-slate-100 rounded w-1/3" />
-            <div className="h-96 bg-slate-100 rounded-3xl w-full" />
-            <div className="space-y-4 pt-8">
-              <div className="h-4 bg-slate-100 rounded w-full" />
-              <div className="h-4 bg-slate-100 rounded w-full" />
-              <div className="h-4 bg-slate-100 rounded w-3/4" />
+  if (!blog) {
+    if (isLoading) {
+      return (
+        <div className="min-h-screen bg-white py-16">
+          <SEO
+            title={`${fallbackTitle} | ImageTech Journal`}
+            description="Read our latest technical insights on Teflon dams, solventless lamination, and converting."
+            canonicalUrl={slugCanonical}
+          />
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <div className="animate-pulse space-y-6">
+              <div className="h-4 bg-slate-100 rounded w-1/4" />
+              <div className="h-12 bg-slate-100 rounded w-4/5" />
+              <div className="h-6 bg-slate-100 rounded w-1/3" />
+              <div className="h-96 bg-slate-100 rounded-3xl w-full" />
+              <div className="space-y-4 pt-8">
+                <div className="h-4 bg-slate-100 rounded w-full" />
+                <div className="h-4 bg-slate-100 rounded w-full" />
+                <div className="h-4 bg-slate-100 rounded w-3/4" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    );
-  }
+      );
+    }
 
-  if (isError && !blog) {
     return (
       <div className="min-h-[70vh] bg-slate-50 py-20 flex items-center justify-center px-4">
         <SEO
@@ -353,7 +353,7 @@ export default function BlogPost() {
   }
 
   const canonicalUrl =
-    blog.canonicalUrl || `https://www.teflondam.com/blog/${blog.slug}`;
+    blog.canonicalUrl || `https://www.teflondam.com/blog/${blog.slug || slug}`;
 
   const formattedPublished = blog.publishedAt
     ? new Date(blog.publishedAt).toLocaleDateString("en-US", {
